@@ -1,0 +1,318 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Search</title>
+  <meta name="description" content="Search Page">
+  <meta name="author" content="Alex Moreau">
+  <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/CoveoJsSearch.Lazy.min.js"></script>
+  <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/templates/templates.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const root = document.querySelector('#search');
+
+      Coveo.SearchEndpoint.configureCloudV2Endpoint(
+        "coveosearch",
+        "xx15d10ab2-cb6c-4c13-addb-aa871471c00e",
+        "https://platform.cloud.coveo.com/rest/search");
+
+      Coveo.init(root);
+    });
+  </script>
+  <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.8521/css/CoveoFullSearch.min.css" />
+  <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+  <div class="CoveoSearchInterface" id="search" data-enable-history="true">
+    <div class="site-header">
+      <div id="searchbox">
+        <div class="CoveoSearchbox" id="globalSearchBox" data-enable-search-as-you-type="true"
+          data-enable-omnibox="true" data-number-of-suggestions="" data-search-as-you-type-delay=""
+          data-query-suggest-character-threshold='0'>
+        </div>
+      </div>
+    </div>
+
+    <div class="CoveoAnalytics" data-search-hub="Coveo Connect Unified Search"></div>
+    <div class="coveo-tab-section" style="display: none">
+      <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
+    </div>
+    <div class="coveo-search-section">
+    </div>
+    <div class="coveo-main-section">
+
+      <div class="coveo-results-column">
+        <div class="coveo-query-suggestions-section">
+          <div class="CoveoSuggestionsCurrentQuery">
+            <span class="querySuggestion0"></span>
+          </div>
+          <div class="CoveoSuggestedQueries">
+            <span>Try these queries: </span>
+            <span class="additionalSuggestion querySuggestion1"></span>
+            <span class="querySuggestDelimiter"> | </span>
+            <span class="additionalSuggestion querySuggestion2"></span>
+            <span class="querySuggestDelimiter"> | </span>
+            <span class="additionalSuggestion querySuggestion3"></span>
+            <span class="querySuggestDelimiter"> | </span>
+            <span class="additionalSuggestion querySuggestion4"></span>
+          </div>
+        </div>
+        <div class="CoveoShareQuery"></div>
+        <div class="CoveoPreferencesPanel">
+          <div class="CoveoResultsPreferences"></div>
+          <div class="CoveoResultsFiltersPreferences"></div>
+        </div>
+        <div class="CoveoTriggers"></div>
+        <div class="CoveoBreadcrumb"></div>
+        <div class="CoveoDidYouMean"></div>
+        <div class="coveo-results-header">
+          <div class="coveo-summary-section">
+            <span class="CoveoQuerySummary">
+            </span>
+            <span class="CoveoQueryDuration"></span>
+          </div>
+          <div class="coveo-sort-section">
+            <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>
+          </div>
+        </div>
+        <div class="CoveoHiddenQuery"></div>
+        <div class="CoveoErrorReport" data-pop-up="false"></div>
+        <div class="CoveoResultList" data-layout="list" data-wait-animation="fade"
+          data-auto-select-fields-to-include="true">
+          <script id="YouTubeVideo" class="result-template" type="text/html" data-layout="list"
+            data-field-filetype="YouTubeVideo"><div class="coveo-result-frame">
+          <div class="coveo-result-row">
+            <div class="coveo-result-cell" style="width:220px; padding-top:7px">
+              <span class="CoveoYouTubeThumbnail">
+              </span>
+            </div>
+            <div class="coveo-result-cell">
+              <div class="coveo-result-row">
+                <div class="coveo-result-cell" style="font-size:16px">
+                  <a class="CoveoResultLink">
+                  </a>
+                </div>
+                <div class="coveo-result-cell" style="text-align:right; width:120px;font-size:12px">
+                  <span class="CoveoFieldValue" data-field="@date" data-helper="dateTime">
+                  </span>
+                </div>
+              </div>
+              <div class="coveo-result-row" style="margin-top:10px;">
+                <div class="coveo-result-cell">
+                  <span class="CoveoExcerpt"></span>
+                </div>
+              </div>
+              <div class="coveo-result-row" style="margin-top:10px;">
+                <div class="coveo-result-cell">
+                  <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+                  <span class="CoveoFieldValue" data-field="@ytvideoduration" data-helper="timeSpan" data-helper-options-is-milliseconds="false" data-text-caption="Length" style="margin-right:30px;"></span>
+                  <span class="CoveoFieldValue" data-field="@ytviewcount" data-text-caption="Views" style="margin-right:30px;"></span>
+                  <span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+                </div>
+              </div>
+              <div class="coveo-result-row">
+                 <div class="coveo-result-cell">
+                  <div class="CoveoMissingTerms"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div></script>
+          <script id="YouTubePlaylist" class="result-template" type="text/html" data-layout="list"
+            data-field-filetype="YouTubePlaylist"><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+            <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+          </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell coveo-no-wrap" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoResultLink"></a>
+              </div>
+              <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                <div class="coveo-result-row">
+                  <span class="CoveoFieldValue" data-field="@date" data-helper="date"></span>
+                </div>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoFieldValue" data-field="@filetype" data-text-caption="Type" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@ytitemcount" data-text-caption="NumberOfVideos" style="margin-right:30px;"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:12px;">
+              <div class="coveo-result-cell" style="padding-top:5px; padding-bottom:5px; font-size:13px;">
+                <span class="CoveoResultFolding" data-result-template-id="YouTubeVideo"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row">
+              <div class="coveo-result-cell">
+                <div class="CoveoMissingTerms"></div>
+              </div>
+            </div>
+          </div>
+        </div></script>
+          <script type="text/html" data-field-source="private" class="result-template" id="speakers"><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+        <span class="CoveoFieldValue" data-field="@image" data-helper="image" data-html-value="true" data-helper-options-height="100"></span>
+        <div class="CoveoQuickview"></div>
+        </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoResultLink"></a>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoExcerpt"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <div class="CoveoPrintableUri"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+            </script>
+          <script type="text/html" data-field-source="steam" class="result-template" id="Games"><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+        <span class="CoveoFieldValue" data-field="@gameimage" data-html-value="true" data-helper="image" data-helper-options-height="150"></span>
+        <div class="CoveoQuickview"></div>
+        </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoResultLink"></a>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoExcerpt"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+        <span class="CoveoText" data-value="Genres:"></span>
+        <b><span class="CoveoFieldValue" data-field="@gamegenre" data-split-values="true"></span></b>
+        </div>
+            </div><div class="coveo-result-row"><div class="coveo-result-cell">
+        <span class="CoveoText" data-value="Metacritic Score:"></span>
+        <b><span class="CoveoFieldValue" data-field="@gamescore"></span></b>
+        </div></div><div class="coveo-result-row"><div class="coveo-result-cell">
+        <span class="CoveoText" data-value="Minutes Played:"></span>
+        <b><span class="CoveoFieldValue" data-field="@minutesplayed"></span></b>
+        </div></div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <div class="CoveoPrintableUri"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+            </script>
+          <script id="Default" class="result-template" type="text/html" data-layout="list"><div class="coveo-result-frame">
+          <div class="coveo-result-cell" style="vertical-align:top;text-align:center;width:32px;">
+            <span class="CoveoIcon" data-small="true" data-with-label="false"></span>
+            <div class="CoveoQuickview"></div>
+          </div>
+          <div class="coveo-result-cell" style="vertical-align: top;padding-left: 16px;">
+            <div class="coveo-result-row" style="margin-top:0;">
+              <div class="coveo-result-cell" style="vertical-align:top;font-size:16px;">
+                <a class="CoveoResultLink"></a>
+              </div>
+              <div class="coveo-result-cell" style="width:120px;text-align:right;font-size:12px">
+                <div class="coveo-result-row">
+                  <span class="CoveoFieldValue" data-field="@indexeddate" data-helper="dateTime" data-html-value="false" data-helper-options-always-include-time="true"></span>
+                </div>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoExcerpt"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <span class="CoveoFieldValue" data-field="@author" data-text-caption="Author" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@source" data-text-caption="Source" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@language" data-text-caption="Language" style="margin-right:30px;"></span>
+                <span class="CoveoFieldValue" data-field="@filetype" data-text-caption="File Type" style="margin-right:30px;"></span>
+              </div>
+            </div>
+            <div class="coveo-result-row" style="margin-top:10px;">
+              <div class="coveo-result-cell">
+                <div class="CoveoPrintableUri"></div>
+              </div>
+            </div>
+          </div>
+        </div></script>
+        </div>
+        <div class="CoveoPager"></div>
+        <div class="CoveoLogo"></div>
+        <div class="CoveoResultsPerPage"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<style>
+  .magic-box-suggestion {
+    display: none;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let initialPageLoadDone = false;
+    const allSuggestions = document.getElementsByClassName('additionalSuggestion');
+    const queryRoot = document.querySelector('#search');
+    for (i = 0; i < allSuggestions.length; i++) {
+      allSuggestions[i].addEventListener('click', function (suggestion) {
+        Coveo.state(queryRoot, 'q', suggestion.target.innerHTML);
+        Coveo.executeQuery(queryRoot);
+      })
+    }
+    const querySuggestion0 = document.querySelector('.querySuggestion0');
+    const querySuggestion1 = document.querySelector('.querySuggestion1');
+    const querySuggestion2 = document.querySelector('.querySuggestion2');
+    const querySuggestion3 = document.querySelector('.querySuggestion3');
+    const querySuggestion4 = document.querySelector('.querySuggestion4');
+    const rootSearchPageUrl = "";
+    Coveo.$$(document.querySelector('#search')).on('querySuggestSuccess', function (e, args) {
+      if (!initialPageLoadDone) {
+        let previousQuery = Coveo.state(Coveo.$$(document).find('#search'), 'q');
+        console.log(previousQuery);
+
+        Coveo.state(queryRoot, 'q', args.completions[0].expression);
+        Coveo.executeQuery(queryRoot);
+        Coveo.state(queryRoot, 'q', previousQuery);
+        initialPageLoadDone = true;
+      }
+
+      querySuggestion0.innerHTML = "Showing results for: " + args.completions[0].expression;
+      querySuggestion1.innerHTML = args.completions[1].expression;
+      querySuggestion2.innerHTML = args.completions[2].expression;
+      querySuggestion3.innerHTML = args.completions[3].expression;
+      querySuggestion4.innerHTML = args.completions[4].expression;
+    })
+    Coveo.$$(queryRoot).on('doneBuildingQuery', function (e, args) {
+      console.log("Query done building");
+      if (args.queryBuilder.expression.parts.length < 1) {
+        window.location.href = "/index.html";
+      }
+    })
+    Coveo.$$(queryRoot).on('afterComponentsInitialization', function (e, args) {
+      document.getElementsByTagName("input")[0].focus();
+      console.log("Components initialized");
+    })
+  })
+</script>
+
+</html>

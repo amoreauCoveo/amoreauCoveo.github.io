@@ -1,0 +1,38 @@
+body {
+    text-align: center;
+}
+
+a.CoveoSearchButton {
+    background-color: white;
+}
+
+.site-header {
+    background-image: url(https://image.freepik.com/free-vector/technology-banner-background-with-hexagonal-shapes-text-space_1017-22589.jpg);
+    height: 200px;
+    background-size: cover;
+}
+
+.column {
+    width: 50%;
+}
+
+#column1 {
+    float: left;
+}
+
+#column2 {
+    float: right;
+}
+/* Innovate CSS */
+.querySuggestion0 {
+    font-weight: bold;
+}
+
+.additionalSuggestion {
+    font-style: italic;
+}
+
+.additionalSuggestion:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

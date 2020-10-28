@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>My HomePage</title>
+    <meta name="description" content="Home Page">
+    <meta name="author" content="Alex Moreau">
+    <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/CoveoJsSearch.Lazy.min.js"></script>
+    <script src="https://static.cloud.coveo.com/searchui/v2.8521/js/templates/templates.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const searchBoxRoot = document.querySelector('#searchbox');
+
+            Coveo.SearchEndpoint.configureCloudV2Endpoint(
+                "coveosearch",
+                "xx15d10ab2-cb6c-4c13-addb-aa871471c00e",
+                "https://platform.cloud.coveo.com/rest/search");
+
+            Coveo.initSearchbox(
+                searchBoxRoot,
+                "file:///C:/Users/amoreau/Documents/BasicDemo/innovatecoveosearch.html"
+            );
+        });
+
+    </script>
+    <link rel="stylesheet" href="https://static.cloud.coveo.com/searchui/v2.8521/css/CoveoFullSearch.min.css" />
+    <link rel="stylesheet" href="src/style.css">
+
+</head>
+
+<body>
+    <div class="site-header">
+        <div class="CoveoSearchInterface" id="searchbox">
+            <div class="CoveoAnalytics" data-search-hub="My Site Search"></div>
+            <div class="CoveoSearchbox" id="globalSearchBox"></div>
+        </div>
+    </div>
+    </div>
+    <h1>Welcome to my site!</h1>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        Coveo.$$(document.getElementById('searchbox')).on('buildingQuerySuggest', function (e, args) {
+            if (args.payload.q.length > 0) {
+                window.location.href = "/search#q=" + args.payload.q;
+            }
+        })
+    })
+</script>
+
+</html>
